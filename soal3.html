@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+    <center>
+    <form id="userlogin">
+        <h1>===FORM LOGIN===</h1>
+        <p><b>Username : <input type="text" /></b></p>
+        <p><b>Password : <input type="password" /></b></p> 
+    </form>
+    <button onclick="masuk()"><b>klick me!!</b></button>    
+    </center>
+    </body>
+</html>
+<script>
+function masuk()
+{
+    var database = [['user123','pass123'],['user456','pass4456']];
+    var username = document.getElementById("userlogin").elements[0].value;
+    var password = document.getElementById("userlogin").elements[1].value;
+    var x = 0;
+
+    for(var i=0; i<database.length; i++)
+    {
+      if(database[i][0] == username)
+      {
+        if(database[i][1] == password)
+        {          
+          x++;
+        }
+      }
+    }
+    if(x>0)
+    {
+      alert('login sukses!');
+    }
+    else
+    {
+      alert('login gagal!');
+    }
+}
+</script>
+    

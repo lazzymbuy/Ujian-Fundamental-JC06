@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>==hitung mundur==</title>
+  </head>
+  <body onload="hitung()">
+    <center>
+      <h1>===COUNTDOWN===</h1>
+      <h3 id="hitung"></h3>
+    </center>   
+  </body>
+</html>
+<script> 
+function hitung()
+    {
+        var waktu = prompt ('Masukkan detik dalam ribuan : ');
+        var mulai = setInterval(hitungmundur,1000)
+        
+        function hitungmundur()
+        {
+            var jam;
+            var menit;
+            var detik;
+            var x;
+
+            jam = Math.floor(waktu/3600);
+            x = waktu-(3600*jam);
+            menit = Math.floor(x/60);
+            detik = x-(menit*60);
+
+            document.getElementById("hitung").innerHTML = jam +' Jam, '+ menit +' menit, ' + detik + ' detik';
+            console.log(jam +' jam, '+menit+' menit, '+detik+' detik.')
+            waktu--;
+            
+            if(detik<0 && jam == 0 && menit == 0)
+            {
+                clearInterval(mulai);
+            }
+        }
+    } 
+</script>
